@@ -1,4 +1,3 @@
-// Header.jsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -14,10 +13,9 @@ const Header = ({ routes }) => {
   };
 
   return (
-    <div className="h-20 flex flex-row md:flex-row text-white bg-black justify-between items-center">
+    <div className="h-20 flex flex-row md:flex-row text-white bg-black justify-between items-center relative">
       <div className="flex items-center">
-        {/* Use Link component to navigate to MainPage */}
-        <Link to="/MainPage" className="font-bold ml-5 text-xl">
+        <Link to="/MainPage" className="font-bold ml-8 text-xl">
           Josué Salazaku
         </Link>
       </div>
@@ -46,9 +44,9 @@ const Header = ({ routes }) => {
 
       {/* Navigation Items */}
       <ul
-        className={`md:flex space-x-5 font-extrabold ${
+        className={`md:flex space-x-5 mx-8 font-extrabold ${
           menuOpen
-            ? "flex flex-col md:flex-row absolute md:static top-20 md:top-0 right-0 left-0 md:right-auto items-center"
+            ? "flex flex-col md:flex-row absolute top-20 md:top-0 right-0 left-0 md:right-auto items-center z-50"
             : "hidden md:flex"
         }`}
       >
@@ -62,7 +60,7 @@ const Header = ({ routes }) => {
       {/* Navigation Overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-white bg-opacity-50 z-50"
+          className="fixed inset-0 bg-white bg-opacity-50 z-40"
           onClick={closeMenu}
         ></div>
       )}
