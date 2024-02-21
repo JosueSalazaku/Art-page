@@ -1,29 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./assets/Components/Header";
 import Art from "./assets/Pages/Art";
 import AboutMe from "./assets/Pages/AboutMe";
 import Contact from "./assets/Pages/Contact";
+import MainPage from "./assets/Pages/MainPage";
+
+const routes = [
+  { to: "/Art", label: "Art" },
+  { to: "/AboutMe", label: "About Me" },
+  { to: "/Contact", label: "Contact" },
+];
 
 function App() {
   return (
     <Router>
-      <Header />
-      <nav>
-        <ul>
-          <li>
-            <Link to="/Art">Art</Link>
-          </li>
-          <li>
-            <Link to="/AboutMe">About Me</Link>
-          </li>
-          <li>
-            <Link to="/Contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <Header routes={routes} />
       <Routes>
+        <Route path="/MainPage" element={<MainPage />} />
         <Route path="/Art" element={<Art />} />
         <Route path="/AboutMe" element={<AboutMe />} />
         <Route path="/Contact" element={<Contact />} />

@@ -1,8 +1,10 @@
 
 
 const Contact = () => {
-  return (
-    <div>Hello</div>
+    return (
+        <main className="h-screen flex flex-row justify-center items-center">
+            <div>Contact</div>
+        </main>
   )
 }
 

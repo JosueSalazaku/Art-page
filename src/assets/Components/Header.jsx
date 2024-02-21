@@ -1,7 +1,8 @@
+// Header.jsx
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-
-const Header = () => {
+const Header = ({ routes }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,9 +14,12 @@ const Header = () => {
   };
 
   return (
-    <div className="h-20 flex flex-row md:flex-row justify-between items-center">
-      <div className="flex  items-center">
-        <h1 className="font-bold ml-5 text-xl">Josué Salazaku</h1>
+    <div className="h-20 flex flex-row md:flex-row text-white bg-black justify-between items-center">
+      <div className="flex items-center">
+        {/* Use Link component to navigate to MainPage */}
+        <Link to="/MainPage" className="font-bold ml-5 text-xl">
+          Josué Salazaku
+        </Link>
       </div>
 
       {/* Hamburger Icon */}
@@ -24,17 +28,17 @@ const Header = () => {
         onClick={toggleMenu}
       >
         <div
-          className={`h-6 w-0.5 bg-black mb-1 transition-transform transform ${
+          className={`h-6 w-0.5 bg-white mb-1 transition-transform transform ${
             menuOpen ? "rotate-45" : "rotate-0"
           }`}
         ></div>
         <div
-          className={`h-6 w-0.5 bg-black mb-1 transition-opacity ${
+          className={`h-6 w-0.5 bg-white mb-1 transition-opacity ${
             menuOpen ? "opacity-0" : "opacity-100"
           }`}
         ></div>
         <div
-          className={`h-6 w-0.5 bg-black transition-transform transform ${
+          className={`h-6 w-0.5 bg-white transition-transform transform ${
             menuOpen ? "-rotate-45" : "rotate-0"
           }`}
         ></div>
@@ -48,15 +52,11 @@ const Header = () => {
             : "hidden md:flex"
         }`}
       >
-        <li className="my-3" onClick={closeMenu}>
-          <a href="">Art</a>
-        </li>
-        <li className="my-3" onClick={closeMenu}>
-          <a href="">About me</a>
-        </li>
-        <li className="my-3" onClick={closeMenu}>
-          <a href="">Contact</a>
-        </li>
+        {routes.map((route) => (
+          <li className="my-3" key={route.to} onClick={closeMenu}>
+            <Link to={route.to}>{route.label}</Link>
+          </li>
+        ))}
       </ul>
 
       {/* Navigation Overlay */}
