@@ -60,7 +60,7 @@ const Header = ({ routes }) => {
       {/* Navigation Overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-white bg-opacity-50 z-40"
+          className="fixed inset-0 bg-slate-600 bg-opacity-50 z-40"
           onClick={closeMenu}
         ></div>
       )}
