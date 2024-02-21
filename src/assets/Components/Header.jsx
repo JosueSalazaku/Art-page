@@ -17,13 +17,16 @@ const Header = () => {
         <h1 className="font-bold ml-5 text-xl">Josué Salazaku</h1>
 
         {/* Hamburger Icon */}
-        <div
-          className="cursor-pointer md:hidden ml-5"
-          onClick={toggleMenu}
-        >
-          <div className={`w-6 h-0.5 bg-black mb-1 transition-transform transform ${menuOpen ? 'rotate-45' : 'rotate-0'}`}></div>
-          <div className={`w-6 h-0.5 bg-black mb-1 transition-opacity ${menuOpen ? 'opacity-0' : 'opacity-100'}`}></div>
-          <div className={`w-6 h-0.5 bg-black transition-transform transform ${menuOpen ? '-rotate-45' : 'rotate-0'}`}></div>
+        <div className="cursor-pointer md:hidden ml-5 flex flex-row space-x-2 " onClick={toggleMenu}>
+          <div
+            className={`h- w-0.5 bg-black mb-1 transition-transform transform ${menuOpen ? 'rotate-90 translate-y-1' : 'rotate-0'}`}
+          ></div>
+          <div
+            className={`h-6 w-0.5 bg-black mb-1 transition-transform transform ${menuOpen ? '-rotate-90 translate-y-1' : 'rotate-0'}`}
+          ></div>
+          <div
+            className={`h-6 w-0.5 bg-black mb-1 transition-transform transform ${menuOpen ? '-rotate-90 translate-y-1' : 'rotate-0'}`}
+          ></div>
         </div>
       </div>
 
@@ -34,7 +37,7 @@ const Header = () => {
           onClick={closeMenu}
         >
           {/* Navigation Items */}
-          <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+          <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-extrabold">
             <li className="my-3" onClick={closeMenu}>
               <a href="">Art</a>
             </li>
