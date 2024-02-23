@@ -4,7 +4,7 @@ import Header from "./assets/Components/Header";
 import Art from "./assets/Pages/Art";
 import AboutMe from "./assets/Pages/AboutMe";
 import Contact from "./assets/Pages/Contact";
-import MainPage from "./assets/Pages/MainPage";
+import Landing from "./assets/Pages/Landing";
 
 const routes = [
   { to: "/Art", label: "Art" },
@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Header routes={routes} />
       <Routes>
-        <Route path="/MainPage" element={<MainPage />} />
+        <Route path="/Landing" element={<Landing />} />
         <Route path="/Art" element={<Art />} />
         <Route path="/AboutMe" element={<AboutMe />} />
         <Route path="/Contact" element={<Contact />} />

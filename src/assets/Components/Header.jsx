@@ -15,7 +15,7 @@ const Header = ({ routes }) => {
   return (
     <div className="h-20 flex flex-row md:flex-row text-white bg-black justify-between items-center relative">
       <div className="flex items-center">
-        <Link to="/MainPage" className="font-bold ml-8 text-xl">
+        <Link to="/Landing" className="font-bold ml-8 text-xl">
           Josué Salazaku
         </Link>
       </div>
