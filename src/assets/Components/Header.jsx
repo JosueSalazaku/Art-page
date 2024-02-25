@@ -44,7 +44,7 @@ const Header = ({ routes }) => {
 
       {/* Mobile Navigation Items */}
       <ul
-        className={`md:hidden mt-12 text-black text-6xl space-y-16 absolute top-20 right-0 left-0 items-center z-50 ${
+        className={`md:hidden mt-12 text-black text-6xl space-y-16 absolute top-20 right-0 left-0 items-center z-50  ${
           menuOpen ? "block" : "hidden"
         }`}
       >
