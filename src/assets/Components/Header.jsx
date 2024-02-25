@@ -42,12 +42,10 @@ const Header = ({ routes }) => {
         ></div>
       </div>
 
-      {/* Navigation Items */}
+      {/* Mobile Navigation Items */}
       <ul
-        className={`md:flex space-x-5 mx-8 font-extrabold ${
-          menuOpen
-            ? "flex flex-col md:flex-row absolute top-20 md:top-0 right-0 left-0 md:right-auto items-center z-50"
-            : "hidden md:flex"
+        className={`md:hidden mt-12 text-black text-6xl space-y-16 absolute top-20 right-0 left-0 items-center z-50 ${
+          menuOpen ? "block" : "hidden"
         }`}
       >
         {routes.map((route) => (
@@ -57,10 +55,19 @@ const Header = ({ routes }) => {
         ))}
       </ul>
 
+      {/* Desktop Navigation Items */}
+      <ul className="hidden md:flex space-x-5 mx-8 font-extrabold">
+        {routes.map((route) => (
+          <li className="my-3" key={route.to}>
+            <Link to={route.to}>{route.label}</Link>
+          </li>
+        ))}
+      </ul>
+
       {/* Navigation Overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-slate-600 bg-opacity-50 z-40"
+          className="fixed inset-0 bg-white bg-opacity-75 z-40"
           onClick={closeMenu}
         ></div>
       )}
