@@ -1,18 +1,9 @@
 ---
+import Layout from "../Layouts/BaseLayout.astro";
 import "../styles/global.css";
-import Navigation from "../Components/Navigation";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="px-5">
-		<Navigation/>
-		<h1 class="text-3xl font-bold">JOSUE ART PORFOLIO</h1>
-	</body>
-</html>
+<Layout>
+  <h1 class="text-3xl font-bold">JOSUE ART PORTFOLIO</h1>
+  <p>Welkom bij mijn kunstwebsite.</p>
+</Layout>
