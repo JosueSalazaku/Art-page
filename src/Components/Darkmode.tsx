@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function Darkmode() {
-  return (
-    <button>Darkmode</button>
-  )
+  const [dark, setDark] = useState<boolean>(false);
+  return <button>Darkmode</button>;
 }
 
-export default Darkmode
+export default Darkmode;

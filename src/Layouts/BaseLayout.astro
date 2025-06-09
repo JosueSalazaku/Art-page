@@ -1,6 +1,7 @@
 ---
 import Navigation from "../Components/Navigation"; 
 import Darkmode from "../Components/Darkmode";
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -10,11 +11,13 @@ import Darkmode from "../Components/Darkmode";
     <meta name="viewport" content="width=device-width" />
     <title>Josue Art Portfolio</title>
   </head>
-  <body class="px-5">
+  <body class="px-5 dark:bg-dark">
     <Navigation />
     <main>
       <slot />
     </main>
-    <Darkmode />
+    <div style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50;">
+      <Darkmode />
+    </div>
   </body>
 </html>
