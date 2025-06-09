@@ -14,6 +14,7 @@ export default function Darkmode() {
 
   const handleClick = () => {
     console.log("Dark mode button clicked");
+    setDark((prev) => !prev);
   };
 
   return (
