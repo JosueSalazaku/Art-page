@@ -1,13 +1,8 @@
 ---
 import Layout from "../Layouts/BaseLayout.astro";
-import Biotext from "../Content/text/bio.md";
-
-console.log("Hello world")
-
-// If you want to use the imported bio content, assign it directly:
-let biotext = Biotext;
+import { Content } from "../content/text/bio.md"
 ---
 
 	<Layout class="px-5">
-		<biotext />
+		<Content />
 	</Layout>
