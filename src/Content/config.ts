@@ -11,6 +11,7 @@ const artworksCollection = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     image: z.string().url().optional(),
+    date: z.number().optional()
     
   }),
 });
