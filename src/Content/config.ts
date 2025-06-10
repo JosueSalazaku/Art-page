@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 
 const textCollection = defineCollection({
   schema: z.object({
-    bio: z.string(), // Frontmatter field you're using
+    bio: z.string().optional()
   }),
 });
 
