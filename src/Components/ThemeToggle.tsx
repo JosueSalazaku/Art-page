@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState<boolean>(false);
+  const [toggled, setToggled] = useState<boolean>(false);
 
   useEffect(() => {
     const root = window.document.documentElement;
-    if (dark) {
+    if (toggled) {
       root.classList.add("dark");
     } else {
       root.classList.remove("dark");
     }
-  }, [dark]);
+  }, [toggled]);
 
   const handleClick = () => {
     console.log("Dark mode button clicked");
-    setDark((prev) => !prev);
+    setToggled((prev) => !prev);
   };
 
   return (
@@ -22,7 +22,7 @@ export default function ThemeToggle() {
       onClick={handleClick}
       className="px-4 py-2 text-black bg-gray-200 rounded dark:bg-gray-800 dark:text-white"
     >
-      {dark ? "Light Mode" : "Dark Mode"}
+      {toggled ? "Light Mode" : "Dark Mode"}
     </button>
   );
 }
