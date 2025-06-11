@@ -1,23 +1,16 @@
 ---
 import Navigation from "../Components/Navigation"; 
-import Darkmode from "../Components/Darkmode";
+import ThemeToggle from "../Components/ThemeToggle";
 import "../styles/global.css";
 ---
 
-<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
     <title>Josue Art Portfolio</title>
   </head>
   <body class="px-5 dark:bg-dark">
     <Navigation />
-    <main>
       <slot />
-    </main>
     <div style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50;">
-      <Darkmode client:load />
+      <ThemeToggle client:load />
     </div>
   </body>
-</html>
