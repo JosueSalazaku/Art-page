@@ -11,10 +11,12 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.3",
     "@astrojs/react": "^4.3.0",
+    "@lucide/astro": "^0.537.0",
     "@tailwindcss/vite": "^4.1.7",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
     "astro": "^5.12.8",
+    "lucide-react": "^0.537.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.7"
