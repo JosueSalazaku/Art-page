@@ -2,7 +2,7 @@ import "../styles/global.css";
 
 export default function Navigation() {
   return (
-    <div className="flex items-center h-16">
+    <div className="flex items-center h-16 px-5">
       <ul className="flex items-center justify-center space-x-2">
         <li>Josué Salazaku</li>
         <li>

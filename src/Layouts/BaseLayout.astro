@@ -1,16 +1,31 @@
 ---
-import Navigation from "../Components/Navigation"; 
-import ThemeToggle from "../Components/ThemeToggle";
+import Navigation from "@/Components/Navigation";
 import "../styles/global.css";
 ---
 
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Josue Art Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body class="px-5 dark:bg-dark">
+  <body class="text-black transition-colors duration-300 bg-white dark:bg-black dark:text-white">
     <Navigation />
-      <slot />
-    <div style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50;">
-      <ThemeToggle client:load />
-    </div>
+    <slot />
   </body>
+
+  <!-- Theme script runs BEFORE page render -->
+  <script is:inline>
+    (() => {
+      try {
+        const theme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (theme === "dark" || (!theme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</html>

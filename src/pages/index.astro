@@ -1,6 +1,7 @@
 ---
 import Layout from "../Layouts/BaseLayout.astro";
-import "../styles/global.css";
+import { ModeToggle } from "../Components/ModeToggle";
+import React from "react";
 ---
 
 <script is:inline>
@@ -23,6 +24,11 @@ import "../styles/global.css";
 </script>
 
 <Layout>
-  <h1 class="text-3xl font-bold dark:bg-rose-600 bg-amber-800">JOSUE ART PORTFOLIO</h1>
-  <p>Welkom bij mijn kunstwebsite.</p>
+  <main class="flex flex-col items-center justify-center min-h-screen gap-4">
+    <h1 class="p-4 text-3xl font-bold rounded dark:bg-rose-600">
+      JOSUE ART PORTFOLIO
+    </h1>
+    <p>Welkom bij mijn kunstwebsite.</p>
+      <ModeToggle client:load />
+  </main>
 </Layout>
