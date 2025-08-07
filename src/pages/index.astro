@@ -1,7 +1,6 @@
 ---
 import Layout from "../Layouts/BaseLayout.astro";
-import { ModeToggle } from "../Components/ModeToggle";
-import React from "react";
+import { Image } from "astro:assets";
 ---
 
 <script is:inline>
@@ -25,10 +24,53 @@ import React from "react";
 
 <Layout>
   <main class="flex flex-col items-center justify-center min-h-screen gap-4">
-    <h1 class="p-4 text-3xl font-bold rounded dark:bg-rose-600">
-      JOSUE ART PORTFOLIO
-    </h1>
-    <p>Welkom bij mijn kunstwebsite.</p>
-      <ModeToggle client:load />
+    <Image 
+      id="artwork-img" 
+      class="h-auto shadow w-96" 
+      src="/artworks/placeholder.jpg" 
+      alt="Artwork"
+      width={384}
+      height={384}
+      format="webp"
+	  loading="eager"
+
+    />
+	<script is:inline>
+const artworks = [
+  "1.png",
+  "2.png",
+  "3.png",
+  "4.JPG",
+  "4.png",
+  "Evening memory 4.JPG",
+  "IMG_0067 2.jpg",
+  "IMG_0147 2.PNG",
+  "IMG_0505 2.jpg",
+  "IMG_0654 2.JPG",
+  "IMG_0879 3.PNG",
+  "IMG_0958.jpg",
+  "IMG_8830.jpg",
+];
+
+	  function getRandomIndex(exclude) {
+		let idx;
+		do {
+		  idx = Math.floor(Math.random() * artworks.length);
+		} while (idx === exclude && artworks.length > 1);
+		return idx;
+	  }
+
+	  let currentIndex = 0;
+	  const imgEl = document.getElementById('artwork-img');
+	  function showRandomArtwork() {
+		currentIndex = getRandomIndex(currentIndex);
+		imgEl.src = `/artworks/${artworks[currentIndex]}`;
+	  }
+
+	  imgEl.src = `/artworks/${artworks[0]}`;
+	  currentIndex = 0;
+
+	  setInterval(showRandomArtwork, 4000);
+	</script>
   </main>
 </Layout>

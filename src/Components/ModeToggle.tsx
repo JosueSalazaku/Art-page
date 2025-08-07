@@ -33,8 +33,13 @@ export function ModeToggle() {
       size="icon"
       onClick={() => setThemeState(theme === "dark" ? "theme-light" : "dark")}
       aria-label="Toggle theme"
+      className="w-12 h-12"
     >
-      {theme === "dark" ? <Sun /> : <Moon />}
+      {theme === "dark" ? (
+        <Sun size={45} fill="currentColor" />
+      ) : (
+        <Moon size={45} fill="currentColor" stroke="none" />
+      )}
     </Button>
   );
 }

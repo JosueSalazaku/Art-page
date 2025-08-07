@@ -1,6 +1,9 @@
 ---
 import Navigation from "@/Components/Navigation";
+import Navigation2 from "@/Components/Navigation";
+
 import "../styles/global.css";
+import { ModeToggle } from "@/Components/ModeToggle";
 ---
 
 <html lang="en">
@@ -9,12 +12,14 @@ import "../styles/global.css";
     <title>Josue Art Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body class="text-black transition-colors duration-300 bg-white dark:bg-black dark:text-white">
+  <body class="px-5 text-black transition-colors bg-white duration-400 dark:bg-black dark:text-white">
     <Navigation />
     <slot />
+    <div style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50;">
+      <ModeToggle client:load />
+    </div>
   </body>
 
-  <!-- Theme script runs BEFORE page render -->
   <script is:inline>
     (() => {
       try {
